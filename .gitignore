@@ -1,0 +1,9 @@
+bin
+*.egg-info
+dist
+include
+lib
+.idea
+testdata.json
+pip-selfcheck.json
+
