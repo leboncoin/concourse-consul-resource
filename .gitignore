@@ -6,4 +6,4 @@ lib
 .idea
 testdata.json
 pip-selfcheck.json
-
+.Python
