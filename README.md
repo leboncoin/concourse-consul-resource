@@ -1,6 +1,14 @@
 # Concourse Hashicorp Consul Resource
-A [Concourse CI](http://concourse.ci) resource for watching key/value changes in Hashicorp [Consul](https://www.consul.io/).
+A very handy [Concourse CI](http://concourse.ci) resource for watching and reacting to key/value changes in Hashicorp [Consul](https://www.consul.io/).
 
+A typical use case for this would be:
+* create a resource instance that watches a set of paths in Consul
+* when something changes under the given set of paths (added/deleted/modified), you will get a resource ref
+* all retrieved key/values are available to be used in Concourse tasks
+
+Watching is done recursively, i.e. "all keys under /path1" and "all keys under /path2", etc. The resource basically retrieves
+all key/value pairs from the given set of paths, and resource ref is a hash of key/value pairs sorted by key.
+ 
 Docker image: https://hub.docker.com/r/aptomi/concourse-consul-resource
 
 ## Source Configuration
