@@ -65,8 +65,7 @@ def in_(destdir, instream):
     version = input.get('version')
     hashRequested = version.get('hash', "") if version is not None else ""
     if hashRequested != hashNew:
-        common.msg("[in] something else just got changed in consul - {0} vs {1}, please re-run".format(hashNew, hashRequested))
-        exit(1)
+        common.msg("[in] some values got changed in consul, so let's just fetch newer values")
 
     # put on a file system
     common.msg("[in] consul resource writing key/values to {0}".format(destdir))
